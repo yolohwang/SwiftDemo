@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		CF9A71F31E78E202000963FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A71F21E78E202000963FF /* AppDelegate.swift */; };
-		CF9A71F51E78E202000963FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A71F41E78E202000963FF /* ViewController.swift */; };
 		CF9A71F81E78E202000963FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9A71F61E78E202000963FF /* Main.storyboard */; };
-		CF9A71FA1E78E202000963FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9A71F91E78E202000963FF /* Assets.xcassets */; };
 		CF9A71FD1E78E202000963FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9A71FB1E78E202000963FF /* LaunchScreen.storyboard */; };
 		CF9A72081E78E202000963FF /* SwiftDemo08Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A72071E78E202000963FF /* SwiftDemo08Tests.swift */; };
 		CF9A72131E78E202000963FF /* SwiftDemo08UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A72121E78E202000963FF /* SwiftDemo08UITests.swift */; };
+		CF9A72241E78E87B000963FF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A72231E78E87B000963FF /* HomeViewController.swift */; };
+		CFF3C9FF1E792E75005FAB52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF3C9FE1E792E75005FAB52 /* Assets.xcassets */; };
+		CFF3CA011E79415A005FAB52 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3CA001E79415A005FAB52 /* Interest.swift */; };
+		CFF3CA031E7947E1005FAB52 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3CA021E7947E1005FAB52 /* InterestCollectionViewCell.swift */; };
+		CFF3CA051E7A2D24005FAB52 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3CA041E7A2D24005FAB52 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +39,7 @@
 /* Begin PBXFileReference section */
 		CF9A71EF1E78E202000963FF /* SwiftDemo08.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo08.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9A71F21E78E202000963FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF9A71F41E78E202000963FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF9A71F71E78E202000963FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CF9A71F91E78E202000963FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF9A71FC1E78E202000963FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF9A71FE1E78E202000963FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF9A72031E78E202000963FF /* SwiftDemo08Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemo08Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +48,11 @@
 		CF9A720E1E78E202000963FF /* SwiftDemo08UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemo08UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9A72121E78E202000963FF /* SwiftDemo08UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemo08UITests.swift; sourceTree = "<group>"; };
 		CF9A72141E78E202000963FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9A72231E78E87B000963FF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CFF3C9FE1E792E75005FAB52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFF3CA001E79415A005FAB52 /* Interest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
+		CFF3CA021E7947E1005FAB52 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
+		CFF3CA041E7A2D24005FAB52 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				CF9A71F21E78E202000963FF /* AppDelegate.swift */,
-				CF9A71F41E78E202000963FF /* ViewController.swift */,
+				CF9A72221E78E506000963FF /* Controller */,
+				CF9A72211E78E4FC000963FF /* View */,
+				CF9A72201E78E4F1000963FF /* Model */,
 				CF9A71F61E78E202000963FF /* Main.storyboard */,
-				CF9A71F91E78E202000963FF /* Assets.xcassets */,
+				CFF3C9FE1E792E75005FAB52 /* Assets.xcassets */,
 				CF9A71FB1E78E202000963FF /* LaunchScreen.storyboard */,
 				CF9A71FE1E78E202000963FF /* Info.plist */,
 			);
@@ -123,6 +131,31 @@
 				CF9A72141E78E202000963FF /* Info.plist */,
 			);
 			path = SwiftDemo08UITests;
+			sourceTree = "<group>";
+		};
+		CF9A72201E78E4F1000963FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFF3CA001E79415A005FAB52 /* Interest.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CF9A72211E78E4FC000963FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CFF3CA021E7947E1005FAB52 /* InterestCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CF9A72221E78E506000963FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A72231E78E87B000963FF /* HomeViewController.swift */,
+				CFF3CA041E7A2D24005FAB52 /* ImageViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF9A71FD1E78E202000963FF /* LaunchScreen.storyboard in Resources */,
-				CF9A71FA1E78E202000963FF /* Assets.xcassets in Resources */,
+				CFF3C9FF1E792E75005FAB52 /* Assets.xcassets in Resources */,
 				CF9A71F81E78E202000963FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF9A71F51E78E202000963FF /* ViewController.swift in Sources */,
+				CFF3CA031E7947E1005FAB52 /* InterestCollectionViewCell.swift in Sources */,
+				CFF3CA011E79415A005FAB52 /* Interest.swift in Sources */,
+				CFF3CA051E7A2D24005FAB52 /* ImageViewController.swift in Sources */,
 				CF9A71F31E78E202000963FF /* AppDelegate.swift in Sources */,
+				CF9A72241E78E87B000963FF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +541,7 @@
 				CF9A72191E78E202000963FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF9A721A1E78E202000963FF /* Build configuration list for PBXNativeTarget "SwiftDemo08Tests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +550,7 @@
 				CF9A721C1E78E202000963FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF9A721D1E78E202000963FF /* Build configuration list for PBXNativeTarget "SwiftDemo08UITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +559,7 @@
 				CF9A721F1E78E202000963FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
