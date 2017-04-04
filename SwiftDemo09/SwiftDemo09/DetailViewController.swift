@@ -168,59 +168,35 @@ class DetailViewController: UIViewController {
     
     fileprivate func Gaea() {
         
-        
-
-        
-        let shape = CAShapeLayer()
-        shape.lineWidth = 6
-//        shape.strokeColor = UIColor.red.cgColor
-        shape.fillColor = UIColor.clear.cgColor
-        shape.lineCap = kCALineCapRound
-        
-        let radius = 50
+        let radius = 80
         let clockwise = true
-        let path = UIBezierPath.init(arcCenter: generalCenter, radius: CGFloat(radius), startAngle: CGFloat(0), endAngle: CGFloat(M_PI * 2), clockwise: clockwise)
-        shape.path = path.cgPath
-        self.view.layer.addSublayer(shape)
+        let path = UIBezierPath.init(arcCenter: generalCenter, radius: CGFloat(radius), startAngle: CGFloat(-M_PI_2), endAngle: CGFloat(M_PI * 1.5), clockwise: clockwise)
+    
+        let progressLayer = CAShapeLayer()
+        progressLayer.fillColor = UIColor.clear.cgColor
+        progressLayer.strokeColor = UIColor.red.cgColor
+        progressLayer.lineWidth = 8.0
+        progressLayer.lineCap = kCALineCapRound
+        progressLayer.path = path.cgPath
         
-        shape.strokeEnd = 0
-        
-//        let locations:[CGFloat] = [0.0,0.25,0.5,0.75]
-//        let colors = [UIColor.red,UIColor.green,UIColor.green,UIColor.yellow]
-        //let colorspace = CGColorSpaceCreateDeviceRGB()
-        //let gradient = CGGradient.init(colorsSpace: colorspace, colors: colors, locations: locations)
+//        let colors = [UIColor.red.cgColor,UIColor.green.cgColor,UIColor.green.cgColor]
 //        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = view1.bounds
+//        gradientLayer.frame = CGRect (x: generalCenter.x - 54.0, y: generalCenter.y - 54.0, width: 108, height: 108)
 //        gradientLayer.colors = colors
-//        gradientLayer.locations = locations as [NSNumber]?
 //        gradientLayer.startPoint = CGPoint (x: 0, y: 0)
 //        gradientLayer.endPoint = CGPoint (x: 0, y: 1)
 //
-//        shape.addSublayer(gradientLayer)
-//        gradientLayer.mask = shape
-//
-//        
-//
-//        let progressLayer = CAShapeLayer()
-//        progressLayer.frame = view1.bounds
-//        progressLayer.fillColor = UIColor.clear.cgColor
-//        
-//        progressLayer.strokeColor = UIColor.blue.cgColor
-//        progressLayer.lineWidth = 6.0
-//        progressLayer.strokeEnd = 100
-//        progressLayer.lineCap = kCALineCapRound
-//        progressLayer.path = path.cgPath
-//        
 //        gradientLayer.mask = progressLayer
 //        self.view.layer.addSublayer(gradientLayer)
-        
+        self.view.layer.addSublayer(progressLayer)
         
         let rotate = CABasicAnimation (keyPath: "strokeEnd")
-        rotate.fromValue = 0
-        rotate.toValue = 1
-        rotate.duration = 5
-        shape.add(rotate, forKey: nil)
-        shape.strokeEnd = 1
+        rotate.fromValue = 0.0
+        rotate.toValue = 1.0
+        rotate.duration = 5.0
+        rotate.fillMode = kCAFillModeForwards
+        rotate.isRemovedOnCompletion = false
+        progressLayer.add(rotate, forKey: nil)
     }
 }
 
