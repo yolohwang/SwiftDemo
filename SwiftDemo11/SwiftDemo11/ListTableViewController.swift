@@ -8,16 +8,54 @@
 
 import UIKit
 
+var personList = [Person]()
+
 class ListTableViewController: UITableViewController {
 
-    var personList = [Person]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadDataSource { (list) in
             print(list)
+            personList += list
+            self.tableView.reloadData()
         }
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //self.tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? DetailViewController {
+            //不通过delegate
+           if let cell = sender as? UITableViewCell,
+            let index = tableView.indexPath(for: cell) {
+            detailVC.person = personList[index.row]
+           }//通过delegate
+           else if let index = sender as? IndexPath {
+            detailVC.person = personList[index.row]
+            detailVC.completionCallBack = {
+                self.tableView.reloadRows(at: [index], with: .automatic)
+            }
+            }
+           else {
+            detailVC.completionCallBack = {
+                guard let person = detailVC.person else {
+                    return
+                }
+                personList.insert(person, at: 0)
+                self.tableView.reloadData()
+            }
+            }
+        }
+    }
+    @IBAction func addPersonAction(_ sender: Any) {
+        performSegue(withIdentifier: "listDetail", sender: nil)
     }
     
     private func loadDataSource(completion:@escaping (_ list: [Person])->())->() {
@@ -42,14 +80,21 @@ class ListTableViewController: UITableViewController {
 extension ListTableViewController {
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return personList.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellId", for: indexPath)
+        cell.textLabel?.text = personList[indexPath.row].name
+        cell.detailTextLabel?.text = personList[indexPath.row].phone
+        return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "listDetail", sender: indexPath)
+    }
 }
+
+

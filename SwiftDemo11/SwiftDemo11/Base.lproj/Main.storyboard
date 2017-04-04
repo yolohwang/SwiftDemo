@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="nVz-nj-p2c" detailTextLabel="n2c-md-74b" style="IBUITableViewCellStyleSubtitle" id="zoA-R1-MUL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellId" textLabel="nVz-nj-p2c" detailTextLabel="n2c-md-74b" style="IBUITableViewCellStyleSubtitle" id="zoA-R1-MUL">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zoA-R1-MUL" id="RMZ-gc-EPk">
@@ -51,10 +51,13 @@
                     <navigationItem key="navigationItem" title="联系人列表" id="s3X-lu-KjE">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tmd-zJ-Kds">
                             <connections>
-                                <segue destination="438-a0-qDj" kind="show" id="5SC-vk-M2d"/>
+                                <action selector="addPersonAction:" destination="EGf-P2-1q4" id="RMr-2Y-xL5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="438-a0-qDj" kind="show" identifier="listDetail" id="Dpr-xT-wkw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gz7-1D-D1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,8 +146,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="明细" id="YlP-wF-cJQ">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="GHz-2n-nkr"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="GHz-2n-nkr">
+                            <connections>
+                                <action selector="saveButtonAction:" destination="438-a0-qDj" id="IAl-aY-Raa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTF" destination="8iO-bu-vvb" id="AbV-pC-aAm"/>
+                        <outlet property="phoneTF" destination="kAC-Nn-4tI" id="ciW-lH-8fj"/>
+                        <outlet property="saveButton" destination="GHz-2n-nkr" id="PLk-nu-G2S"/>
+                        <outlet property="titleTF" destination="n8L-Rc-Myh" id="fwA-Vl-VyF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15D-lc-Bx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

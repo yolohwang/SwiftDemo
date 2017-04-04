@@ -92,7 +92,7 @@ class DetailViewController: UIViewController {
             
         }
 //        navigationController?.popViewController(animated: true)
-        navigationController?.popToRootViewController(animated: true)
+//        navigationController?.popToRootViewController(animated: true)
     }
     
     fileprivate func resetButton (){
